@@ -16,7 +16,8 @@ Personal academic website and research portfolio for **Hao Luo (骆浩)**, Ph.D.
 
 - `index.html` — homepage and research portfolio
 - `publications.html` — complete peer-reviewed publication list
-- `cv.html` — web CV and patent list
+- `patents.html` — complete patent record with original Chinese titles
+- `cv.html` — web CV with links to the complete records
 - `assets/cv/Hao_Luo_CV_EN.pdf` — downloadable English academic CV
 - `css/style.css` — responsive visual system
 - `js/main.js` — navigation, language switch, and subtle reveal effects

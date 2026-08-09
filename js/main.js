@@ -61,7 +61,7 @@
   }
 
   const translations = {
-    navAbout: '关于', navResearch: '研究', navPublications: '论文', navProjects: '项目', navCv: '简历', navContact: '联系',
+    navAbout: '关于', navResearch: '研究', navPublications: '论文', navPatents: '专利', navProjects: '项目', navCv: '简历', navContact: '联系',
     heroEyebrow: '清华大学 · 中国北京', heroRole: '机械工程博士研究生\n清华大学', heroFocus: '活体 DNA 数据存储',
     heroKeywords: '工程化活体材料 · 微流控 · 生物制造 · 自动化',
     heroStatement: '我致力于开发用于 DNA 数据存储、检索、再生、改写与自动化运行的工程化活体系统。',
@@ -91,7 +91,7 @@
     bachelorDegree: '机械工程工学学士', bachelorDetails: 'GPA：3.77 / 4.0 · 专业排名：3 / 106',
     talksKicker: '学术交流', talksTitle: '代表性报告', moreKicker: '学术服务', moreTitle: '教学、奖励与专利', fullCv: '查看完整简历 →',
     teachingTitle: '教学', teachingAward: '清华大学优秀助教 · 前 5%', awardsTitle: '代表性奖励', patentsTitle: '专利',
-    patentSummary: '6 项中国发明专利 / 申请', patentGranted: '3 项授权 · 1 项公开 · 2 项申请', patentStudent: '作为学生第一发明人参与 3 项 DNA 存储专利申请', viewPatents: '查看专利清单 →',
+    patentSummary: '6 项中国发明专利 / 申请', patentGranted: '3 项授权 · 1 项公开 · 2 项申请', patentStudent: '作为学生第一发明人参与 3 项 DNA 存储专利申请', viewPatents: '查看全部 6 项专利 →',
     mediaKicker: '社会传播', mediaTitle: '媒体与新闻', mediaIntro: '活体 DNA 存储研究的代表性报道。',
     skillsKicker: '方法能力', skillsTitle: '技术专长', contactKicker: '建立联系', contactTitle: '期待与您讨论研究。',
     contactBody: '欢迎就博士后机会、学术合作、活体 DNA 存储、生物制造与智能科研仪器开展交流。', contactAffiliation: '清华大学 · 中国北京'
@@ -105,11 +105,31 @@
   const applyLanguage = (language) => {
     const nextLanguage = language === 'zh' ? 'zh' : 'en';
     document.documentElement.lang = nextLanguage === 'zh' ? 'zh-CN' : 'en';
+    document.body.classList.toggle('lang-zh', nextLanguage === 'zh');
     document.querySelectorAll('[data-i18n]').forEach((element) => {
       if (!element.dataset.en) element.dataset.en = element.textContent;
       const translated = nextLanguage === 'zh' ? translations[element.dataset.i18n] : element.dataset.en;
       if (translated) element.textContent = translated;
     });
+    document.querySelectorAll('[data-zh], [data-zh-html]').forEach((element) => {
+      if (!element.dataset.enLocalHtml) element.dataset.enLocalHtml = element.innerHTML;
+      if (nextLanguage === 'zh') {
+        if (element.dataset.zhHtml) element.innerHTML = element.dataset.zhHtml;
+        else element.textContent = element.dataset.zh;
+      } else {
+        element.innerHTML = element.dataset.enLocalHtml;
+      }
+    });
+    document.querySelectorAll('[data-lang-only]').forEach((element) => {
+      element.hidden = element.dataset.langOnly !== nextLanguage;
+    });
+    if (document.body.dataset.titleEn && document.body.dataset.titleZh) {
+      document.title = nextLanguage === 'zh' ? document.body.dataset.titleZh : document.body.dataset.titleEn;
+    }
+    const description = document.querySelector('meta[name="description"]');
+    if (description && document.body.dataset.descriptionEn && document.body.dataset.descriptionZh) {
+      description.content = nextLanguage === 'zh' ? document.body.dataset.descriptionZh : document.body.dataset.descriptionEn;
+    }
     if (about) about.textContent = nextLanguage === 'zh' ? aboutChinese : aboutEnglish;
     languageButtons.forEach((button) => {
       const selected = button.dataset.setLang === nextLanguage;
