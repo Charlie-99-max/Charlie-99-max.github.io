@@ -65,7 +65,7 @@
     heroEyebrow: '清华大学 · 中国北京', heroRole: '机械工程博士研究生\n清华大学', heroFocus: '活体 DNA 数据存储',
     heroKeywords: '工程化活体材料 · 微流控 · 生物制造 · 自动化',
     heroStatement: '我致力于开发用于 DNA 数据存储、检索、再生、改写与自动化运行的工程化活体系统。',
-    viewResearch: '探索研究', viewPublications: '代表论文', downloadCv: '下载英文简历',
+    viewResearch: '探索研究', viewPublications: '代表论文', downloadCv: '下载中文简历',
     heroLab: '生物制造中心', heroDept: '清华大学机械工程系',
     aboutKicker: '个人简介', aboutTitle: '关于我',
     chainProblem: '科学问题', chainBio: '生物工程', chainMicro: '微流控', chainAuto: '自动化', chainSystem: '一体化系统',
@@ -122,6 +122,9 @@
     });
     document.querySelectorAll('[data-lang-only]').forEach((element) => {
       element.hidden = element.dataset.langOnly !== nextLanguage;
+    });
+    document.querySelectorAll('[data-href-en][data-href-zh]').forEach((element) => {
+      element.setAttribute('href', nextLanguage === 'zh' ? element.dataset.hrefZh : element.dataset.hrefEn);
     });
     if (document.body.dataset.titleEn && document.body.dataset.titleZh) {
       document.title = nextLanguage === 'zh' ? document.body.dataset.titleZh : document.body.dataset.titleEn;
