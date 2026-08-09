@@ -129,6 +129,9 @@ button { color: inherit; }
 .section-heading h2 { margin: 0; color: var(--blue); font-family: Georgia, "Times New Roman", "Noto Serif SC", serif; font-size: clamp(38px, 4.8vw, 60px); font-weight: 600; line-height: 1.08; letter-spacing: -.035em; }
 .section-heading-row { display: flex; align-items: end; justify-content: space-between; gap: 40px; margin-bottom: 48px; }
 .section-intro { max-width: 400px; margin: 0 0 5px; color: var(--muted); font-family: Georgia, "Times New Roman", serif; font-size: 17px; line-height: 1.55; }
+.section-heading-action { display: grid; justify-items: end; gap: 12px; }
+.section-heading-action .section-intro { text-align: right; }
+.mobile-section-link { display: none; }
 .about-copy > p { margin: 0; color: #323841; font-family: Georgia, "Times New Roman", "Noto Serif SC", serif; font-size: clamp(19px, 2.15vw, 25px); line-height: 1.6; letter-spacing: -.012em; }
 .about-citation { color: var(--link); font-size: .76em; }
 .about-citation a { white-space: nowrap; }
@@ -328,6 +331,7 @@ button { color: inherit; }
 .patent-record-main .patent-original { color: var(--purple); font-family: "Songti SC", "Noto Serif CJK SC", serif; font-size: 15px; font-weight: 700; }
 .patent-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
 .tag-blue { background: var(--blue); }
+.tag-cyan { background: var(--cyan); }
 .tag-muted { background: #68717c; }
 .tag-outline { color: var(--purple); background: #fff; border: 1px solid rgba(130, 49, 142, .3); }
 .patent-identifiers { display: flex; flex-wrap: wrap; gap: 8px 16px; padding-top: 8px; }
@@ -351,6 +355,22 @@ button { color: inherit; }
 .project-record-main li { padding-left: 3px; color: var(--muted); font-size: 13px; line-height: 1.72; }
 .project-record-main li::marker { color: var(--purple); }
 .project-record-main .inline-links { margin-top: 17px; }
+.verification-note { display: grid; grid-template-columns: 190px 1fr; gap: 32px; margin: 28px 0 10px; padding: 26px 28px; background: #f7f4f8; border: 1px solid #e4d7e6; border-radius: 9px; }
+.verification-note strong { color: var(--purple); font-family: Georgia, "Times New Roman", "Noto Serif SC", serif; font-size: 20px; }
+.verification-note p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.75; }
+.media-record-group { margin-top: 82px; }
+.media-record-group:first-of-type { margin-top: 60px; }
+.media-record-list { border-top: 1px solid var(--line-dark); }
+.media-record { display: grid; grid-template-columns: 110px 1fr; gap: 35px; padding: 36px 5px; border-bottom: 1px solid var(--line); }
+.media-record-index { display: grid; align-content: start; justify-items: start; gap: 9px; }
+.media-record-index > span { display: grid; place-items: center; width: 58px; height: 58px; color: var(--white); background: var(--blue); border-radius: 8px; font-family: Georgia, serif; font-size: 15px; font-weight: 700; box-shadow: 0 8px 20px rgba(7, 63, 120, .16); }
+.media-record-index small { color: var(--muted); font: 650 9px/1.45 ui-monospace, SFMono-Regular, monospace; }
+.media-record-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; color: var(--muted); font-size: 10px; font-weight: 680; letter-spacing: .045em; text-transform: uppercase; }
+.media-record-main h3 { max-width: 930px; margin: 12px 0 10px; color: var(--blue); font-family: Georgia, "Times New Roman", "Noto Serif SC", serif; font-size: clamp(21px, 2.25vw, 28px); font-weight: 600; line-height: 1.3; letter-spacing: -.018em; }
+.media-record-main > p { max-width: 940px; margin: 0; color: var(--muted); font-size: 12px; line-height: 1.72; }
+.media-record-links { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 14px; }
+.media-record-links a { color: var(--link); font-size: 11px; font-weight: 740; }
+.media-record-links a:hover { text-decoration: underline; text-underline-offset: 4px; }
 
 @media (max-width: 1020px) {
   .site-nav { gap: 17px; }
@@ -391,6 +411,8 @@ button { color: inherit; }
   .stat:nth-child(3) { border-top: 1px solid rgba(255, 255, 255, .2); }
   .stat:nth-child(4) { border-top: 1px solid rgba(255, 255, 255, .2); border-right: 1px solid rgba(255, 255, 255, .2); }
   .section-heading-row { align-items: start; flex-direction: column; gap: 20px; }
+  .section-heading-action { justify-items: start; }
+  .section-heading-action .section-intro { text-align: left; }
   .record-note { align-items: flex-start; flex-direction: column; }
   .record-note span { text-align: left; }
   .highlight-media { min-height: 430px; }
@@ -448,18 +470,25 @@ button { color: inherit; }
   .metric-row > span { min-height: 72px; }
   .publication-item, .all-pubs .publication-item { grid-template-columns: 1fr; gap: 8px; padding: 30px 0; }
   .patent-record { grid-template-columns: 1fr; gap: 10px; padding: 32px 0; }
+  .verification-note { grid-template-columns: 1fr; gap: 10px; padding: 22px; }
   .project-record-group { margin-top: 60px; }
+  .media-record-group { margin-top: 60px; }
   .project-group-heading { align-items: flex-start; }
   .project-group-heading > span { width: 42px; height: 42px; }
   .project-record { grid-template-columns: 1fr; gap: 18px; padding: 30px 0; }
+  .media-record { grid-template-columns: 1fr; gap: 18px; padding: 30px 0; }
   .project-record-index { display: flex; align-items: center; gap: 12px; }
+  .media-record-index { display: flex; align-items: center; gap: 12px; }
   .project-record-index > span { width: 50px; height: 50px; }
+  .media-record-index > span { width: 50px; height: 50px; }
   .pub-main h3 { font-size: 22px; }
   .project-grid { grid-template-columns: 1fr; }
   .project-wide { grid-column: auto; }
   .project-card { min-height: 285px; padding: 24px; }
   .media-grid { grid-template-columns: 1fr; }
   .media-card { min-height: 220px; }
+  .section-heading-action .section-link { display: none; }
+  .mobile-section-link { display: inline-block; margin-top: 25px; }
   .contact-section { padding: 72px 0; }
   .contact-card { padding: 24px; }
   .contact-email { font-size: 12px; }

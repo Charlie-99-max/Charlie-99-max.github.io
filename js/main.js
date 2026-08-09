@@ -92,7 +92,7 @@
     talksKicker: '学术交流', talksTitle: '代表性报告', moreKicker: '学术服务', moreTitle: '教学、奖励与专利', fullCv: '查看完整简历 →',
     teachingTitle: '教学', teachingAward: '清华大学优秀助教 · 前 5%', awardsTitle: '代表性奖励', patentsTitle: '专利',
     patentSummary: '6 项中国发明专利 / 申请', patentGranted: '3 项授权 · 1 项公开 · 2 项申请', patentStudent: '作为学生第一发明人参与 3 项 DNA 存储专利申请', viewPatents: '查看全部 6 项专利 →',
-    mediaKicker: '社会传播', mediaTitle: '媒体与新闻', mediaIntro: '活体 DNA 存储研究的代表性报道。',
+    mediaKicker: '社会传播', mediaTitle: '媒体与新闻', mediaIntro: '活体 DNA 存储研究的代表性报道。', viewAllMedia: '查看完整媒体与新闻档案 →',
     skillsKicker: '方法能力', skillsTitle: '技术专长', contactKicker: '建立联系', contactTitle: '期待与您讨论研究。',
     contactBody: '欢迎就博士后机会、学术合作、活体 DNA 存储、生物制造与智能科研仪器开展交流。', contactAffiliation: '清华大学 · 中国北京'
   };
