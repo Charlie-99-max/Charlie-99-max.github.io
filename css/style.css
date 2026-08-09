@@ -130,6 +130,9 @@ button { color: inherit; }
 .section-heading-row { display: flex; align-items: end; justify-content: space-between; gap: 40px; margin-bottom: 48px; }
 .section-intro { max-width: 400px; margin: 0 0 5px; color: var(--muted); font-family: Georgia, "Times New Roman", serif; font-size: 17px; line-height: 1.55; }
 .about-copy > p { margin: 0; color: #323841; font-family: Georgia, "Times New Roman", "Noto Serif SC", serif; font-size: clamp(19px, 2.15vw, 25px); line-height: 1.6; letter-spacing: -.012em; }
+.about-citation { color: var(--link); font-size: .76em; }
+.about-citation a { white-space: nowrap; }
+.about-citation a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .research-chain { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 38px; padding-top: 26px; border-top: 1px solid var(--line); }
 .research-chain span { padding: 7px 11px; color: var(--blue); background: #f0f5fa; border-radius: 5px; font-size: 11px; font-weight: 730; letter-spacing: .04em; text-transform: uppercase; }
 .research-chain i { color: #a2a9b2; font-style: normal; }

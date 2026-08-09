@@ -97,10 +97,6 @@
     contactBody: '欢迎就博士后机会、学术合作、活体 DNA 存储、生物制造与智能科研仪器开展交流。', contactAffiliation: '清华大学 · 中国北京'
   };
 
-  const about = document.querySelector('[data-copy="aboutText"]');
-  const aboutEnglish = about?.textContent.trim() || '';
-  const aboutChinese = '骆浩是清华大学机械工程博士研究生，研究核心是如何将活体系统转化为可物理寻址、可再生的信息介质。他将 DNA 编码、质粒与工程菌设计、液滴微流控、水凝胶生物制造、干态保存、光学检索与科研自动化贯通起来。博士期间，他建立了工程化活体记忆微球（ELMM）这一文件级存储单元，实现活体 DNA 数据的随机访问；进一步发展出可再生 Living Disk–Drive 架构，支持释放、扩增、再封装、数据库补库与信息改写接口。除核心方向外，他还参与患者来源肿瘤类组装体研究，主要负责微流控平台设计与制造工艺开发。他的长期目标是将生物可编程性转化为可靠的一体化工程系统。';
-
   const languageButtons = document.querySelectorAll('[data-set-lang]');
   const applyLanguage = (language) => {
     const nextLanguage = language === 'zh' ? 'zh' : 'en';
@@ -133,7 +129,6 @@
     if (description && document.body.dataset.descriptionEn && document.body.dataset.descriptionZh) {
       description.content = nextLanguage === 'zh' ? document.body.dataset.descriptionZh : document.body.dataset.descriptionEn;
     }
-    if (about) about.textContent = nextLanguage === 'zh' ? aboutChinese : aboutEnglish;
     languageButtons.forEach((button) => {
       const selected = button.dataset.setLang === nextLanguage;
       button.classList.toggle('active', selected);
