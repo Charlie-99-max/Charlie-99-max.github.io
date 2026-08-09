@@ -83,7 +83,7 @@
     cancerBody: '通过液滴微流控实现患者来源肺癌和胃癌类组装体的可控制造，用于肿瘤微环境建模与治疗药物筛选。',
     myContribution: '本人贡献', contributionBody: '微流控平台设计与制造工艺开发。',
     publicationsKicker: '学术成果', publicationsTitle: '代表性论文', viewAllPublications: '查看全部 6 篇论文 →',
-    projectsKicker: '工程能力', projectsTitle: '代表性项目', projectsIntro: '核心科研主线之外的系统构建经验。',
+    projectsKicker: '工程能力', projectsTitle: '代表性项目', projectsIntro: '核心科研主线之外的系统构建经验。', viewAllProjects: '查看全部 14 项项目 →',
     projectDna: '开发芯片式自动化 DNA 合成仪原型与协同编码方法，完成 13 nt DNA 合成验证。',
     projectVision: '构建图像预处理、特征提取与点阵识别 OpenCV 流程，并将核心模块封装为 DLL 以支持系统集成。',
     projectLaser: '设计动态聚焦机械系统与嵌入式伺服控制，集成 STM32、传感器、执行器、仿真与原型制造。',

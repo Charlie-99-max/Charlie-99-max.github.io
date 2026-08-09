@@ -332,6 +332,22 @@ button { color: inherit; }
 .patent-identifiers span { position: relative; }
 .patent-identifiers span + span::before { content: "·"; position: absolute; left: -10px; color: #aab0b7; }
 .record-source-note { max-width: 900px; margin: 34px 0 0; color: #858c94; font-size: 11px; }
+.project-record-group { margin-top: 78px; }
+.project-record-group:first-of-type { margin-top: 54px; }
+.project-group-heading { display: flex; align-items: center; gap: 18px; margin-bottom: 8px; padding-bottom: 20px; border-bottom: 1px solid var(--line-dark); }
+.project-group-heading > span { display: grid; place-items: center; width: 48px; height: 48px; flex: none; color: var(--white); background: var(--purple); border-radius: 50%; font: 750 12px/1 ui-monospace, SFMono-Regular, monospace; }
+.project-group-heading p { margin: 0 0 3px; color: var(--purple); font-size: 10px; font-weight: 760; letter-spacing: .11em; text-transform: uppercase; }
+.project-group-heading h2 { margin: 0; color: var(--blue); font-family: Georgia, "Times New Roman", "Noto Serif SC", serif; font-size: clamp(27px, 3.3vw, 39px); font-weight: 600; line-height: 1.15; letter-spacing: -.025em; }
+.project-record { display: grid; grid-template-columns: 110px 1fr; gap: 35px; padding: 38px 5px; border-bottom: 1px solid var(--line); }
+.project-record-index { display: grid; align-content: start; justify-items: start; gap: 9px; }
+.project-record-index > span { display: grid; place-items: center; width: 58px; height: 58px; color: var(--white); background: var(--blue); border-radius: 8px; font-family: Georgia, serif; font-size: 16px; font-weight: 700; box-shadow: 0 8px 20px rgba(7, 63, 120, .16); }
+.project-record-index small { color: var(--muted); font: 650 9px/1.45 ui-monospace, SFMono-Regular, monospace; }
+.project-record-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; color: var(--muted); font-size: 10px; font-weight: 680; letter-spacing: .045em; text-transform: uppercase; }
+.project-record-main h2 { max-width: 920px; margin: 12px 0 13px; color: var(--blue); font-family: Georgia, "Times New Roman", "Noto Serif SC", serif; font-size: clamp(22px, 2.5vw, 30px); font-weight: 600; line-height: 1.25; letter-spacing: -.018em; }
+.project-record-main ul { display: grid; gap: 8px; max-width: 950px; margin: 0; padding-left: 19px; }
+.project-record-main li { padding-left: 3px; color: var(--muted); font-size: 13px; line-height: 1.72; }
+.project-record-main li::marker { color: var(--purple); }
+.project-record-main .inline-links { margin-top: 17px; }
 
 @media (max-width: 1020px) {
   .site-nav { gap: 17px; }
@@ -429,6 +445,12 @@ button { color: inherit; }
   .metric-row > span { min-height: 72px; }
   .publication-item, .all-pubs .publication-item { grid-template-columns: 1fr; gap: 8px; padding: 30px 0; }
   .patent-record { grid-template-columns: 1fr; gap: 10px; padding: 32px 0; }
+  .project-record-group { margin-top: 60px; }
+  .project-group-heading { align-items: flex-start; }
+  .project-group-heading > span { width: 42px; height: 42px; }
+  .project-record { grid-template-columns: 1fr; gap: 18px; padding: 30px 0; }
+  .project-record-index { display: flex; align-items: center; gap: 12px; }
+  .project-record-index > span { width: 50px; height: 50px; }
   .pub-main h3 { font-size: 22px; }
   .project-grid { grid-template-columns: 1fr; }
   .project-wide { grid-column: auto; }

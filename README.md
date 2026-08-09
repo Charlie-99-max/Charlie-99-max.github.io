@@ -17,6 +17,7 @@ Personal academic website and research portfolio for **Hao Luo (骆浩)**, Ph.D.
 - `index.html` — homepage and research portfolio
 - `publications.html` — complete peer-reviewed publication list
 - `patents.html` — complete patent record with original Chinese titles
+- `projects.html` — complete bilingual record of 14 research and engineering projects
 - `cv.html` — web CV with links to the complete records
 - `assets/cv/Hao_Luo_CV_EN.pdf` — downloadable English academic CV
 - `assets/cv/Hao_Luo_CV_CN.pdf` — downloadable Chinese academic CV generated from the August 2026 final comprehensive TeX source
